@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage: HTML5</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+    <button onclick="plusClicked()">+</button>
+    <h2 id="displaycount">8</h2>
+    <button onclick="minusClicked()" >-</button>
+
+
+    <script>
+        var count = 0
+        var dc = document.getElementById("displaycount")
+        console.log(dc)
+        dc.innerText = "Number will come from localstorage!!!!"
+
+
+        function plusClicked(){
+            console.log('plus clicked' + localStorage.count)
+            if(localStorage.count == undefined){
+                //localStorage.setItem("count", count)
+                localStorage.count = 0
+            }else{
+                localStorage.count++
+                dc.innerText = localStorage.count
+            }
+        }
+
+        function minusClicked(){
+            console.log('minus clicked');
+            if(localStorage.count == undefined){
+                //localStorage.setItem("count", count)
+                localStorage.count = 0
+            }else{
+                localStorage.count--
+                dc.innerText = localStorage.count
+            }
+        }
+
+    </script>
+</body>
+</html>
